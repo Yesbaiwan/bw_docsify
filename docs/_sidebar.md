@@ -3,9 +3,9 @@
   - [测试教程](note/测试/测试教程.md)
 
 - 大窝随笔
+  - [霍格沃茨魔法学校](note/大窝随笔/霍格沃茨魔法学校.md)
   - [百万的 API KEY](note/大窝随笔/百万的_API_KEY.md)
   - [霍格沃茨魔法学校(修订记录)](note/大窝随笔/霍格沃茨魔法学校(修订记录).md)
-  - [霍格沃茨魔法学校](note/大窝随笔/霍格沃茨魔法学校.md)
   - [【新人必读】百万的大窝群规](note/大窝随笔/【新人必读】百万的大窝群规.md)
 
 - API 代理
@@ -17,6 +17,7 @@
   - [清程极智 AIPing API 代理](note/API_代理/清程极智_AIPing_API_代理.md)
 
 - dev
+  - [iKuuu 机场签到脚本](note/dev/iKuuu_机场签到脚本.md)
   - [Trae 项目规则](note/dev/Trae_项目规则.md)
   - [yt-dlp 下载B站视频](note/dev/yt-dlp_下载B站视频.md)
   - [Cherry Studio 美化](note/dev/Cherry_Studio_美化.md)
