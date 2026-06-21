@@ -31,16 +31,18 @@ sudo vi /etc/docker/daemon.json
 ```json
 {
   "registry-mirrors": [
-    "https://docker.m.ixdev.cn",
-    "https://hub.rat.dev",
-    "https://docker.xuanyuan.me",
-    "https://mirror.ccs.tencentyun.com",
     "https://docker.1ms.run",
-    "https://docker.fnnas.com",
-    "https://docker.m.daocloud.io"
+    "https://docker.1panel.live",
+    "https://docker.sparkcr.cn",
+    "https://hub.rat.dev",
+    "https://dockerproxy.net",
+    "https://docker-registry.nmqu.com",
+    "https://docker.fnnas.com"
   ]
 }
 ```
+
+> 更多的可以在这里寻找：[容器镜像监控](https://status.anye.xyz)
 
 换源后需要重启 Docker 服务：
 
