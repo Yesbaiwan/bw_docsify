@@ -7,7 +7,8 @@ const SIDEBAR_FILE = path.join(DOCS_DIR, "_sidebar.md");
 const HOME_FILE = path.join(DOCS_DIR, "home.md");
 const TEMPLATE_FILE = path.join(__dirname, "template.md");
 
-const IGNORE_DIRS = new Set(["archive"]);
+// 忽略的目录
+const IGNORE_DIRS = new Set(["archive", "Archive"]);
 
 function formatDate(date) {
   return date.toISOString().split("T")[0];

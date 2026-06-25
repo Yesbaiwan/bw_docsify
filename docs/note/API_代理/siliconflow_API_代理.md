@@ -1,4 +1,4 @@
-# siliconflow_API 代理
+# siliconflow API 代理
 
 siliconflow 的默认获取模型列表的接口不包含价格信息，从网页获取呢提取又比较麻烦，今天找到了一个隐藏的接口，可以直接获取到模型列表的 JSON，包含价格信息，需要用 token 鉴权。
 
