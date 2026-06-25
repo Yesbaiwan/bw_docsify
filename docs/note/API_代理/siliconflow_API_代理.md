@@ -65,7 +65,7 @@ export default {
 
 这个接口本身是用 token 鉴权的，可以直接调用。
 
-```curl
+```bash
 curl -X GET "https://busy-bear.siliconflow.cn/api/v1/playground/comprehensive/all" \
   -H "Authorization: Bearer ${SILICONFLOW_API_KEY}" \
   -H "Content-Type: application/json"
