@@ -23,6 +23,7 @@
   - [清程极智 AIPing API 代理](note/API_代理/清程极智_AIPing_API_代理.md) 2026-04-27
 
 - dev
+  - [GitHub 代理加速](note/dev/GitHub_代理加速.md) 2026-07-16
   - [让远程服务器走本地电脑的代理实现科学上网](note/dev/让远程服务器走本地电脑的代理实现科学上网.md) 2026-06-24
   - [Docker 基础(Linux)](note/dev/Docker_基础(Linux).md) 2026-06-21
   - [iKuuu 机场签到脚本](note/dev/iKuuu_机场签到脚本.md) 2026-06-19
