@@ -8,26 +8,26 @@
 - `设置` -> `对话流` -> `终端工具偏好` 的 `执行命令时自动打开终端` 选择 `始终打开`
 
 ```
-本地编码与运行命令注意事项：
+本地编码与运行规则：
 
-1. 当前运行环境为 Windows 11 + PowerShell 5.1：
-   - 无条件顺序执行用换行或 `;`，条件执行必须显式检查 `$LASTEXITCODE`
-     - 外部命令：`<cmd>; if ($LASTEXITCODE -ne 0) { throw "Exit: $LASTEXITCODE" }`
-     - 内部命令（cmdlet）：`<cmd>; if (-not $?) { throw "Cmdlet failed" }`
-   - 批量操作或复杂诊断时，编写命令与脚本来标记、拆解与解决问题
-2. 代码体积限制（配置/数据类除外）：单文件 ≤300 行，单函数 ≤100 行，超出则要拆分/简单压缩。
-   - 校验：`(Get-Content "path").Count`
-3. 源码在 `src` 目录下，测试在 `src/test` 目录下，一个文件只做一件事。
-4. 先搜索再动手：需求不明确或首次操作时，必须先用工具了解现状再执行，禁止盲改：
-   - 代码搜索：SearchCodebase、Grep、Glob、LS
-   - 文件阅读：Read
-   - 互联网搜索：WebSearch、WebFetch
-   - 文档查询（MCP）：mcp_context7_resolve-library-id → mcp_context7_query-docs
-   - 发起多轮基础且差异化的查询，理解之前结果，优化后续查询
-5. 使用现成权威方案，禁止重复造轮子。发现问题/清理代码可以提出重构计划，待确认后再执行。
-6. 修改代码优先使用替换修改，且不可破坏/删除注释。
-7. 单次修改涉及 >3 文件或总修改 >100 行代码时，必须创建 TodoWrite 拆分为子任务，使用 Task 子代理并行处理。
-8. 多个独立的工具/命令/子任务可并行发起，提高效率
-9. 项目使用 uv 管理 Python 与依赖：
-   - 禁止手动修改 pyproject.toml，管理依赖使用 `uv add/remove`
+环境：Windows 11 + PowerShell 5.1
+
+1. 执行与错误处理
+   - 外部命令：`<cmd>; if ($LASTEXITCODE -ne 0) { throw "Exit: $LASTEXITCODE" }`
+   - 内部 cmdlet：`<cmd>; if (-not $?) { throw "Cmdlet failed" }`
+   - 复杂/批量任务：写 Python | Node | PS 脚本处理，禁止手动重复操作。
+   - 有效执行：已知可用工具直接调用，禁止重复无意义验证（如环境探测、`uv --version` 检查）
+2. 代码规模
+   - 限制：单文件 ≤300 行，单函数 ≤100 行（纯数据/配置文件除外）。
+   - 校验：`(Get-Content "path").Count` 确认行数，超限必须拆分。
+   - 修改：改前必须 Read 相关文件；修改优先 Edit 精确替换，禁止无必要的 Write 覆写。
+3. 工作流程
+   - 搜索：发动多轮差异化查询，根据结果优化后续查询。
+   - 查证：新功能先 WebSearch 找验证过的方案，禁止重复造轮子。
+   - 拆分：涉及 >3 文件或 >100 行代码，创建 Target，再用 TodoWrite 拆分并派发 Subagent (Task)。
+   - Subagent 回报：只讲干货（做了什么探索、发现什么、具体结论/报错），严禁包装词、黑话或高大上修辞；内容服务主判断，不替主做结论。
+   - 并行：无依赖的独立任务优先并行发起。
+4. Python 项目 (uv)
+   - 运行：`uv run <script.py>` 或激活 `.\.venv\Scripts\activate`。
+   - 依赖：严格 `uv add/remove`，禁止手动改 `pyproject.toml`。
 ```
