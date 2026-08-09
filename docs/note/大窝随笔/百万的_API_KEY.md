@@ -18,7 +18,7 @@
 
 填写模板，请修改 `[]` 中为你需要的内容，私信发给我的 QQ / 小红书 / 微信，我会发送给你 API Key。
 
-```plaintext
+```markdown
 QQ/小红书/微信号：[任选一个，真实的账号ID]（必填）
 API 用途：[Cherry Studio/酒馆/rikkahub/kelivo/...]（必填）
 每日用量：[20-50]条（必填）
@@ -52,4 +52,4 @@ API 用途：[Cherry Studio/酒馆/rikkahub/kelivo/...]（必填）
 
 备注账号 (推荐QQ) 领取其他福利
 
-![](../../assets/appreciate_me.png ":size=500")
+![](../../_media/appreciate_me.png ':size=500')

@@ -5,7 +5,7 @@
 1. 下载 yt-dlp.exe：https://github.com/yt-dlp/yt-dlp/releases
 2. 下载 ffmpeg：https://www.gyan.dev/ffmpeg/builds/
 
-![](../../assets/ffmpeg_download.png ":size=800")
+![](../../_media/ffmpeg_download.png ":size=800")
 
 3. 解压 ffmpeg 到任意位置，将 `bin` 目录添加到系统环境变量的 PATH 中，例如添加：`D:\ffmpeg-8.0.1-essentials_build\bin`
 

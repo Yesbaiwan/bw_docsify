@@ -12,4 +12,4 @@ document.querySelectorAll("input[type=checkbox]:not(:checked)").forEach((c) => c
 
 效果如下：
 
-![](../../assets/kimi选中复选框.gif)
+![](../../_media/kimi选中复选框.gif)

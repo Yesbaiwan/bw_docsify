@@ -18,7 +18,7 @@
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 ```
 
-![](../../assets/注册表Keyboard.png)
+![](../../_media/注册表Keyboard.png)
 
 ### Step 3: 创建 Scancode Map 键值
 
@@ -33,7 +33,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 功能：禁用 Caps Lock 键
 效果：按下 Caps Lock 键时，系统不会识别任何按键操作
 
-![](../../assets/禁用CapsLock.png)
+![](../../_media/禁用CapsLock.png)
 
 ### Step 4: 重启系统
 

@@ -9,16 +9,16 @@
 来到 [maple mono](https://github.com/subframe7536/maple-font/releases) release 页面。本文写作时，maple mono 字体版本为 `V7.9`，发布时间为 `2025-12-05`。
 
 下载 **MapleMonoNormalNL-TTF-AutoHint** 版本，得到压缩包并解压。这个版本是纯英文、不带图标库、Windows 原生格式的代码字体。体积很小，缺点是不含中文和图标等字符。
-![](../../assets/maple-mono-install.png ':size=800')
+![](../../_media/maple-mono-install.png ':size=800')
 
 `Win + R` 打开"运行"窗口，输入 `fonts`，打开 Windows 字体文件夹。安装该字体时，将解压得到的 .ttf 文件复制到字体文件夹里，或者双击 .ttf 文件一个一个安装。
 
-![](../../assets/Windows_安装字体.png ':size=800')
+![](../../_media/Windows_安装字体.png ':size=800')
 
 ### 安装霞鹜文楷等宽(屏幕阅读版) 字体
 
 来到 [霞鹜文楷等宽(屏幕阅读版)](https://github.com/lxgw/LxgwWenKai-Screen/releases) release 页面。本文写作时，霞鹜文楷等宽(屏幕阅读版) 字体版本为 `v1.522`，发布时间为 `2026-03-19`。
-![](../../assets/LXGWWenKaiScreen-install.png ':size=800')
+![](../../_media/LXGWWenKaiScreen-install.png ':size=800')
 
 下载 `LXGWWenKaiScreen.ttf` 与 `LXGWWenKaiMonoScreen.ttf` 两个文件，按上述方法安装。
 

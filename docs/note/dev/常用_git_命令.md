@@ -18,7 +18,7 @@ git push -f origin main
 git log --pretty=format:"%Cred%h%Creset | %Cgreen%an%Creset | %Cblue%ad%Creset | %s" --date=format:"%Y-%m-%d %H:%M"
 ```
 
-![](../../assets/查看仓库提交历史记录（简洁显示）.png)
+![](../../_media/查看仓库提交历史记录（简洁显示）.png)
 
 4. 显示本地引用变动历史（所有操作轨迹）
 
@@ -26,7 +26,7 @@ git log --pretty=format:"%Cred%h%Creset | %Cgreen%an%Creset | %Cblue%ad%Creset |
 git reflog
 ```
 
-![](../../assets/git_reflog.png)
+![](../../_media/git_reflog.png)
 
 5. 把本地的 main 的上游设成远程 origin 的 main
 

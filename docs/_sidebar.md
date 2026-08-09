@@ -3,9 +3,9 @@
   - [测试教程](note/测试/测试教程.md)
 
 - 大窝随笔
+  - [百万的 API KEY](note/大窝随笔/百万的_API_KEY.md)
   - [霍格沃茨魔法学校(修订记录)](note/大窝随笔/霍格沃茨魔法学校(修订记录).md)
   - [霍格沃茨魔法学校](note/大窝随笔/霍格沃茨魔法学校.md)
-  - [百万的 API KEY](note/大窝随笔/百万的_API_KEY.md)
   - [【新人必读】百万的大窝群规](note/大窝随笔/【新人必读】百万的大窝群规.md)
 
 - API 代理
@@ -17,22 +17,22 @@
   - [清程极智 AIPing API 代理](note/API_代理/清程极智_AIPing_API_代理.md)
 
 - dev
-  - [Trae 项目规则](note/dev/Trae_项目规则.md)
   - [Cherry Studio 美化](note/dev/Cherry_Studio_美化.md)
+  - [Trae 项目规则](note/dev/Trae_项目规则.md)
+  - [VSCode文件空包折叠展开](note/dev/VSCode文件空包折叠展开.md)
+  - [Windows 上禁用 CapsLock 键](note/dev/Windows_上禁用_CapsLock_键.md)
   - [Windows 字体安装](note/dev/Windows_字体安装.md)
-  - [GitHub 代理加速](note/dev/GitHub_代理加速.md)
+  - [yt-dlp 下载B站视频](note/dev/yt-dlp_下载B站视频.md)
+  - [修复 Windows 数字显示成符号的异常](note/dev/修复_Windows_数字显示成符号的异常.md)
+  - [常用 git 命令](note/dev/常用_git_命令.md)
+  - [批量删除 kimi 网页对话](note/dev/批量删除_kimi_网页对话.md)
   - [让远程服务器走本地电脑的代理实现科学上网](note/dev/让远程服务器走本地电脑的代理实现科学上网.md)
+  - [豆包网页开启黑暗主题](note/dev/豆包网页开启黑暗主题.md)
+  - [GitHub 代理加速](note/dev/GitHub_代理加速.md)
   - [Docker 基础(Linux)](note/dev/Docker_基础(Linux).md)
   - [iKuuu 机场签到脚本](note/dev/iKuuu_机场签到脚本.md)
-  - [yt-dlp 下载B站视频](note/dev/yt-dlp_下载B站视频.md)
-  - [VSCode文件空包折叠展开](note/dev/VSCode文件空包折叠展开.md)
-  - [修复 Windows 数字显示成符号的异常](note/dev/修复_Windows_数字显示成符号的异常.md)
-  - [豆包网页开启黑暗主题](note/dev/豆包网页开启黑暗主题.md)
   - [git 下载与配置](note/dev/git_下载与配置.md)
-  - [常用 git 命令](note/dev/常用_git_命令.md)
   - [TG 获取 Channel ID 与 TG BOT TOKEN](note/dev/TG_获取_Channel_ID_与_TG_BOT_TOKEN.md)
-  - [Windows 上禁用 CapsLock 键](note/dev/Windows_上禁用_CapsLock_键.md)
   - [Windows 设置命令别名(alias)](note/dev/Windows_设置命令别名(alias).md)
   - [国内服务器安装 uv](note/dev/国内服务器安装_uv.md)
-  - [批量删除 kimi 网页对话](note/dev/批量删除_kimi_网页对话.md)
   - [智谱 coding plan 接入 NewAPI](note/dev/智谱_coding_plan_接入_NewAPI.md)

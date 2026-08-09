@@ -4,8 +4,8 @@
 
 字体选用的是 **霞鹜文楷等宽（屏幕阅读版）** 与 **Maple Mono**，先看看效果：
 
-![cherry-css-light](../../assets/cherry-css-light.png ':size=800')
-![cherry-css-dark](../../assets/cherry-css-dark.png ':size=800')
+![cherry-css-light](../../_media/cherry-css-light.png ':size=800')
+![cherry-css-dark](../../_media/cherry-css-dark.png ':size=800')
 
 ## 二、下载字体
 

@@ -1,0 +1,87 @@
+/* ============================================================
+   自定义侧边栏样式（替代 docsify-sidebar-collapse 社区插件）
+   实现：文件夹/文件图标 + 折叠交互 + 旧版 v4 观感
+   依赖：docsify v5 原生生成的 .sidebar-nav / li.group / a.page-link 结构
+   调整指引：
+     - 图标：改下方两处 SVG 的 url()
+     - 间距/布局：改各节对应数值
+   ============================================================ */
+
+/* ---------- 侧边栏宽度（v4 原值 300px，v5 默认 280px） ---------- */
+:root {
+  --sidebar-width: 300px;
+}
+
+/* ---------- 文字与间距（v4 观感） ---------- */
+.sidebar-nav {
+  line-height: 2em;
+  padding-bottom: 40px;
+}
+
+.sidebar-nav li a {
+  font-size: 14px;
+  padding-right: 0; /* v4 无右侧留白 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 嵌套子列表缩进（v4 为 15px，v5 默认 0.85em≈13.6px） */
+.sidebar-nav li.group > ul {
+  padding-left: 15px;
+}
+
+/* ---------- 图标（蓝色文件夹/文件 SVG，同旧版插件） ---------- */
+.sidebar-nav > ul {
+  margin-left: 20px;
+}
+
+.sidebar-nav ul:not(.app-sub-sidebar) > li {
+  position: relative;
+  margin: 0;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.sidebar-nav ul:not(.app-sub-sidebar) > li::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: -16px;
+  height: 14px;
+  width: 14px;
+}
+
+/* 文件夹图标（分组） */
+.sidebar-nav ul:not(.app-sub-sidebar) > li.group::before {
+  background: center/contain no-repeat
+    url(data:image/svg+xml;base64,PHN2ZyB0PSIxNTk4NTQ1MTE2ODQ2IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjIyNTciCiAgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiPgogIDxwYXRoIGQ9Ik00NDggMTI4aDUxMmE2NCA2NCAwIDAgMSA2NCA2NHYzMjBhNjQgNjQgMCAwIDEtNjQgNjRINDQ4YTY0IDY0IDAgMCAxLTY0LTY0VjE5MmE2NCA2NCAwIDAgMSA2NC02NHoiCiAgICBmaWxsPSIjNzliOGZmIiBwLWlkPSIyMjU4Ij48L3BhdGg+CiAgPHBhdGgKICAgIGQ9Ik02NCA2NGg0MDguNDQ4YTY0IDY0IDAgMCAxIDU3LjIxNiAzNS4zOTJsOTIuNjcyIDE4NS4yMTZhNjQgNjQgMCAwIDAgNTcuMjE2IDM1LjM5Mkg5NjBhNjQgNjQgMCAwIDEgNjQgNjR2NTEyYTY0IDY0IDAgMCAxLTY0IDY0SDY0YTY0IDY0IDAgMCAxLTY0LTY0VjEyOGE2NCA2NCAwIDAgMSA2NC02NHoiCiAgICBmaWxsPSIjNzliOGZmIiBwLWlkPSIyMjU5Ij48L3BhdGg+Cjwvc3ZnPgo=);
+}
+
+/* 文件图标（页面） */
+.sidebar-nav ul:not(.app-sub-sidebar) > li:not(.group)::before {
+  background: center/contain no-repeat
+    url(data:image/svg+xml;base64,PHN2ZyB0PSIxNTk4NTQ1NjIzOTMxIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjgxNzMiCiAgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiPgogIDxwYXRoCiAgICBkPSJNODEyLjggMjY4LjhsLTE4NS42LTE4NS42Yy0xMi44LTEyLjgtMjguOC0xOS4yLTQ0LjgtMTkuMkgyNTZjLTM1LjIgMC02NCAyOC44LTY0IDY0djc2OGMwIDM1LjIgMjguOCA2NCA2NCA2NGg1MTJjMzUuMiAwIDY0LTI4LjggNjQtNjRWMzEzLjZjMC0xNi02LjQtMzItMTkuMi00NC44eiBtLTcwLjQgMTkuMkg2MDhWMTUzLjZMNzQyLjQgMjg4ek03MDQgODk2SDI1NlYxMjhoMjg4djE2MGMwIDM1LjIgMjguOCA2NCA2NCA2NGgxNjB2NTQ0aC02NHoiCiAgICBwLWlkPSI4MTc0Ij48L3BhdGg+Cjwvc3ZnPgo=);
+}
+
+/* ---------- 折叠/展开 ---------- */
+.sidebar-nav li.collapse > ul {
+  display: none;
+}
+
+/* ---------- 站点名 / 搜索框 / 内容区（v4 观感） ---------- */
+.sidebar .app-name {
+  font-size: 24px;
+  margin: 0 0 16px;
+  font-weight: 300;
+}
+
+.search input {
+  height: 37px;
+  padding: 9px 7px;
+}
+
+.markdown-section {
+  max-width: 80%;
+  padding: 30px 15px 40px;
+}
