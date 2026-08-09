@@ -7,7 +7,7 @@ const SIDEBAR_FILE = path.join(DOCS_DIR, '_sidebar.md');
 const HOME_FILE = path.join(DOCS_DIR, 'home.md');
 const TEMPLATE_FILE = path.join(__dirname, 'template.md');
 
-// 忽略的目录
+// 归档目录不纳入侧边栏（archive / Archive 大小写都匹配）
 const IGNORE_DIRS = new Set(['archive', 'Archive']);
 
 function formatDate(date) {

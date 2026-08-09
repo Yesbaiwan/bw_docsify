@@ -15,14 +15,15 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
     <!-- 自定义侧边栏样式（替代社区插件） -->
     <link rel="stylesheet" href="_assets/sidebar.css" />
+    <!-- 代码块样式（Shiki 高亮 + 复制按钮） -->
+    <link rel="stylesheet" href="_assets/code-block.css" />
     <!-- 霞鹜文楷字体 -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
     <!-- Maple Mono CN 字体 -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mogeko/maple-mono-cn/dist/font/result.min.css" />
     <style>
       :root {
-        --font-code: 'Maple Mono CN', monospace;
-        /* 恢复 v4 的内容区宽度（v5 默认 72ch，v4 为 80%） */
+        /* 内容区宽度（v5 默认 72ch，v4 为 80%） */
         --content-max-width: 75%;
       }
 
@@ -39,90 +40,21 @@
         font-weight: 800 !important;
       }
 
-      code,
-      pre {
-        font-family: var(--font-code);
-      }
-
-      /* 最后更新时间插件样式 */
+      /* 最后更新时间插件样式（docsify-updated 渲染的底部时间戳） */
       .update-time {
-        /* 文字颜色 */
         color: gray;
-        /* 字体大小 */
         font-size: 12px;
-        /* 文字对齐方式 */
         text-align: left;
-        /* 上边距 */
         margin-top: 20px;
-        /* 内边距 */
         padding: 10px;
-        /* 顶部边框 - 浅灰色分割线 */
         border-top: 1px solid #eee;
-      }
-
-      /* Shiki 代码块样式 */
-      pre.shiki {
-        position: relative;
-        border-radius: 8px;
-        padding: 16px;
-        overflow-x: auto;
-        font-family: var(--font-code);
-        font-size: 14px;
-        line-height: 1.6;
-      }
-
-      pre.shiki code {
-        font-family: inherit;
-        background: none;
-      }
-
-      pre.shiki .copy-btn {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        padding: 2px 8px;
-        border: none;
-        border-radius: 4px;
-        background: rgba(128, 128, 128, 0.3);
-        color: #999;
-        font-size: 12px;
-        opacity: 0;
-        transition: opacity 0.2s;
-      }
-
-      pre.shiki:hover .copy-btn {
-        opacity: 1;
       }
     </style>
   </head>
   <body>
     <div id="app"></div>
     <script>
-      // Shiki 高亮后添加复制按钮的函数
-      function addCopyButtonsToShiki() {
-        document.querySelectorAll('pre.shiki').forEach((pre) => {
-          if (pre.querySelector('.copy-btn')) return;
-
-          const btn = document.createElement('button');
-          btn.className = 'copy-btn';
-          btn.textContent = '复制';
-
-          btn.addEventListener('click', async () => {
-            const code = pre.querySelector('code')?.textContent || '';
-            try {
-              await navigator.clipboard.writeText(code);
-              btn.textContent = '已复制';
-              setTimeout(() => (btn.textContent = '复制'), 1000);
-            } catch {
-              btn.textContent = '失败';
-              setTimeout(() => (btn.textContent = '复制'), 1000);
-            }
-          });
-
-          pre.appendChild(btn);
-        });
-      }
-
+      // 代码块的 Shiki 高亮 + 复制按钮由 _assets/code-block.js 以插件形式注入
       window.$docsify = {
         name: '百万的博客',
         loadSidebar: true,
@@ -147,7 +79,7 @@
           language: 'chinese',
         },
 
-        // 最后更新时间
+        // 最后更新时间插件（docsify-updated）
         timeUpdater: {
           text: "<div class='update-time'>最后更新时间: {docsify-updated}</div>",
           formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}',
@@ -166,30 +98,6 @@
           depth: 3, // 搜索标题的最大层级
         },
 
-        // Shiki 代码高亮插件
-        plugins: [
-          function (hook, vm) {
-            hook.doneEach(async function () {
-              if (!window.shikiHighlight) return;
-
-              for (const block of document.querySelectorAll('pre code')) {
-                const pre = block.parentElement;
-                if (pre.classList.contains('shiki')) continue;
-
-                const lang =
-                  Array.from(block.classList)
-                    .find((c) => c.startsWith('lang-'))
-                    ?.replace('lang-', '') || 'text';
-
-                pre.outerHTML = await window.shikiHighlight(block.textContent, lang);
-              }
-
-              // Shiki 高亮后重新添加复制按钮
-              addCopyButtonsToShiki();
-            });
-          },
-        ],
-
         // Mermaid 配置
         mermaidConfig: {
           querySelector: '.mermaid',
@@ -202,20 +110,18 @@
     <!-- Docsify v5 -->
     <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
 
-    <!-- plugins -->
-
     <!-- LaTeX 公式（docsify-latex，引擎用 KaTeX） -->
     <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-latex@0.5.2/dist/docsify-latex.min.js"></script>
     <!-- 分页导航插件 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-    <!-- 图片缩放插件 (v5) -->
+    <!-- 图片缩放插件（v5 内置） -->
     <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/zoom-image.min.js"></script>
     <!-- 字数统计插件 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-count@latest/dist/countable.min.js"></script>
     <!-- 最后更新时间插件 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
-    <!-- 搜索插件 (v5) -->
+    <!-- 搜索插件（v5 内置） -->
     <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/search.min.js"></script>
     <!-- Mermaid -->
     <script type="module">
@@ -224,39 +130,15 @@
       window.mermaid = mermaid;
     </script>
     <script src="//unpkg.com/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
-    <!-- 自定义侧边栏折叠交互（替代社区插件） -->
-    <script src="_assets/sidebar.js"></script>
-    <!-- Shiki 代码高亮 -->
-    <script type="module">
-      import { codeToHtml } from 'https://cdn.jsdelivr.net/npm/shiki@1/+esm';
-
-      const langMap = {
-        js: 'javascript',
-        ts: 'typescript',
-        py: 'python',
-        sh: 'bash',
-        shell: 'bash',
-        yml: 'yaml',
-        md: 'markdown',
-      };
-
-      window.shikiHighlight = async (code, lang) => {
-        lang = lang.toLowerCase();
-        lang = langMap[lang] || lang || 'text';
-        try {
-          return await codeToHtml(code, { lang, theme: 'catppuccin-latte' });
-        } catch (e) {
-          console.warn(`Shiki: Language "${lang}" not found, fallback to text`);
-          return await codeToHtml(code, {
-            lang: 'text',
-            theme: 'catppuccin-latte',
-          });
-        }
-      };
-    </script>
 
     <!-- 红心点击特效 -->
     <script src="https://cdn.jsdelivr.net/gh/mukeshkushwahae/click-heart-animation@main/dist/click-heart-animation.min.js" defer></script>
+
+    <!-- 自定义侧边栏折叠交互（替代社区插件） -->
+    <script src="_assets/sidebar.js"></script>
+    <!-- 代码块：Shiki 高亮 + 复制按钮 -->
+    <script src="_assets/code-block.js"></script>
+
     <script>
       window.addEventListener('DOMContentLoaded', () => {
         ClickHeartAnimation.init();

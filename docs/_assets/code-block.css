@@ -1,0 +1,76 @@
+/* ============================================================
+   代码块样式（Shiki 高亮 + 复制按钮）
+   实现：.code-wrap 包裹容器 + 右上角复制按钮 + 触屏常显
+   依赖：docsify v5 主题变量（--margin-block）+ _assets/code-block.js
+   调整指引：
+     - 字体：改下方 :root 的 --font-code
+     - 按钮样式：改 .code-wrap .copy-btn 对应属性
+   ============================================================ */
+
+/* ---------- 代码字体 ---------- */
+:root {
+  --font-code: 'Maple Mono CN', monospace;
+}
+
+code,
+pre {
+  font-family: var(--font-code);
+}
+
+/* ---------- 代码块（Shiki 高亮后的结构） ---------- */
+.code-wrap {
+  /* 外层容器不滚动，作为复制按钮的定位基准，
+     代码块横向滚动时按钮固定在可见区域右上角 */
+  position: relative;
+  /* 原主题给 pre 的上下间距移到容器上 */
+  margin-block: var(--margin-block);
+}
+
+pre.shiki {
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: var(--font-code);
+  font-size: 14px;
+  line-height: 1.6;
+  /* 间距由 .code-wrap 承担 */
+  margin-block: 0;
+}
+
+pre.shiki code {
+  font-family: inherit;
+  background: none;
+  /* 清除主题给行内 code 的 margin/padding（inline 元素的左右
+     margin/padding 只推挤第一行，导致首行比其他行多缩进约 6px） */
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- 复制按钮 ---------- */
+.code-wrap .copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+  padding: 2px 8px;
+  border: none;
+  border-radius: 4px;
+  background: rgba(128, 128, 128, 0.3);
+  color: #999;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.code-wrap:hover .copy-btn,
+.code-wrap:focus-within .copy-btn {
+  opacity: 1;
+}
+
+/* 触屏设备没有 hover，始终显示复制按钮 */
+@media (hover: none) {
+  .code-wrap .copy-btn {
+    opacity: 1;
+  }
+}

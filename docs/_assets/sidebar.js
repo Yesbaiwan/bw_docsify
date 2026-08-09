@@ -1,7 +1,7 @@
 /* ============================================================
    自定义侧边栏折叠交互（替代 docsify-sidebar-collapse 社区插件）
    依赖：docsify v5 原生 li.group 结构 + sidebar.css
-   配置：window.$docsify.sidebarDisplayLevel（默认展开层级，默认 1）
+   配置：window.$docsify.sidebarDisplayLevel（未配置时默认展开 1 级）
    ============================================================ */
 (function () {
   'use strict';

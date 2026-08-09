@@ -31,7 +31,7 @@
   padding-left: 15px;
 }
 
-/* ---------- 图标（蓝色文件夹/文件 SVG，同旧版插件） ---------- */
+/* ---------- 列表布局（缩进 / 间距 / 光标） ---------- */
 .sidebar-nav > ul {
   margin-left: 20px;
 }
@@ -43,6 +43,7 @@
   cursor: pointer;
 }
 
+/* ---------- 图标（蓝色文件夹/文件 SVG，同旧版插件） ---------- */
 .sidebar-nav ul:not(.app-sub-sidebar) > li::before {
   content: '';
   position: absolute;
@@ -69,7 +70,7 @@
   display: none;
 }
 
-/* ---------- 站点名 / 搜索框 / 内容区（v4 观感） ---------- */
+/* ---------- 站点名 / 搜索框（v4 观感） ---------- */
 .sidebar .app-name {
   font-size: 24px;
   margin: 0 0 16px;
@@ -81,7 +82,7 @@
   padding: 9px 7px;
 }
 
+/* 内容区（v4 观感；宽度由 index.html 的 --content-max-width 变量控制） */
 .markdown-section {
-  max-width: 80%;
   padding: 30px 15px 40px;
 }

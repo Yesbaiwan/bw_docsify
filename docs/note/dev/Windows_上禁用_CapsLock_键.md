@@ -24,7 +24,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 在右侧空白区域，右键选择 新建 > 二进制值，将其命名为 Scancode Map。然后，双击这个新建的键值，在弹出的编辑框中输入以下数据：
 
-```plaintext
+```md
 00 00 00 00 00 00 00 00
 02 00 00 00 00 00 3A 00
 00 00 00 00
@@ -43,7 +43,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 上述中 Scancode Map 的键值为
 
-```plaintext
+```md
 00 00 00 00 00 00 00 00
 02 00 00 00 00 00 3A 00
 00 00 00 00
@@ -51,7 +51,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 意思是：将 Caps Lock 键映射到空键，即禁用 Caps Lock 键。
 
-```plaintext
+```md
 00 00 00 00 00 00 00 00  ; 固定头部
 02 00 00 00              ; 映射数量：1个映射
 00 00                    ; 目标键：空键 (扫描码0x00)
@@ -61,7 +61,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 你也可以把 Caps Lock 键映射到其他键，比如下面这样：
 
-```plaintext
+```md
 00 00 00 00 00 00 00 00
 02 00 00 00 01 00 3A 00
 00 00 00 00
@@ -69,7 +69,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 
 意思是：将 Caps Lock 键映射到 Esc 键，即按下 Caps Lock 键时，系统会识别为 Esc 键的操作。
 
-```plaintext
+```md
 00 00 00 00 00 00 00 00  ; 固定头部
 02 00 00 00              ; 映射数量：1个映射
 01 00                    ; 目标键：Esc键 (扫描码0x01)
