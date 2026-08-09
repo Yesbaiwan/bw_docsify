@@ -10,17 +10,17 @@ API 密钥使用：`anonymous`
 export default {
   async fetch(req) {
     const url = new URL(req.url);
-    const BASE = "https://api.kilo.ai/api/openrouter";
+    const BASE = 'https://api.kilo.ai/api/openrouter';
 
-    if (url.pathname === "/") {
-      return new Response("Hello World", { status: 200 });
+    if (url.pathname === '/') {
+      return new Response('Hello World', { status: 200 });
     }
 
     // 去掉 /v1 前缀，得到上游路径
-    const upstreamPath = url.pathname.replace(/^\/v1/, "");
+    const upstreamPath = url.pathname.replace(/^\/v1/, '');
 
     // 模型列表接口（支持 /models 和 /v1/models）
-    if (upstreamPath === "/models") {
+    if (upstreamPath === '/models') {
       const res = await fetch(`${BASE}/models${url.search}`, req);
       if (!res.ok) return new Response(await res.text(), { status: res.status });
       const data = await res.json();

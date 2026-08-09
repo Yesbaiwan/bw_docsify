@@ -3,21 +3,22 @@
   - [测试教程](note/测试/测试教程.md)
 
 - 大窝随笔
+  - [【新人必读】百万的大窝群规](note/大窝随笔/【新人必读】百万的大窝群规.md)
   - [百万的 API KEY](note/大窝随笔/百万的_API_KEY.md)
   - [霍格沃茨魔法学校(修订记录)](note/大窝随笔/霍格沃茨魔法学校(修订记录).md)
   - [霍格沃茨魔法学校](note/大窝随笔/霍格沃茨魔法学校.md)
-  - [【新人必读】百万的大窝群规](note/大窝随笔/【新人必读】百万的大窝群规.md)
 
 - API 代理
-  - [五合一聚合](note/API_代理/五合一聚合.md)
-  - [siliconflow API 代理](note/API_代理/siliconflow_API_代理.md)
-  - [OpenRouter API 代理](note/API_代理/OpenRouter_API_代理.md)
   - [kilo free API 代理](note/API_代理/kilo_free_API_代理.md)
+  - [OpenRouter API 代理](note/API_代理/OpenRouter_API_代理.md)
   - [Poe 大模型 API 代理](note/API_代理/Poe_大模型_API_代理.md)
+  - [siliconflow API 代理](note/API_代理/siliconflow_API_代理.md)
+  - [五合一聚合](note/API_代理/五合一聚合.md)
   - [清程极智 AIPing API 代理](note/API_代理/清程极智_AIPing_API_代理.md)
 
 - dev
   - [Cherry Studio 美化](note/dev/Cherry_Studio_美化.md)
+  - [iKuuu 机场签到脚本](note/dev/iKuuu_机场签到脚本.md)
   - [Trae 项目规则](note/dev/Trae_项目规则.md)
   - [VSCode文件空包折叠展开](note/dev/VSCode文件空包折叠展开.md)
   - [Windows 上禁用 CapsLock 键](note/dev/Windows_上禁用_CapsLock_键.md)
@@ -30,7 +31,6 @@
   - [豆包网页开启黑暗主题](note/dev/豆包网页开启黑暗主题.md)
   - [GitHub 代理加速](note/dev/GitHub_代理加速.md)
   - [Docker 基础(Linux)](note/dev/Docker_基础(Linux).md)
-  - [iKuuu 机场签到脚本](note/dev/iKuuu_机场签到脚本.md)
   - [git 下载与配置](note/dev/git_下载与配置.md)
   - [TG 获取 Channel ID 与 TG BOT TOKEN](note/dev/TG_获取_Channel_ID_与_TG_BOT_TOKEN.md)
   - [Windows 设置命令别名(alias)](note/dev/Windows_设置命令别名(alias).md)

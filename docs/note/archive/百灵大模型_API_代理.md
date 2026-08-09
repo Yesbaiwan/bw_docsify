@@ -14,20 +14,20 @@ cloudflare workers 部署：
 export default {
   async fetch(req) {
     const url = new URL(req.url);
-    if (url.pathname === "/") {
-      return new Response("获取密钥前往 https://ling.tbox.cn/open", { status: 200 });
+    if (url.pathname === '/') {
+      return new Response('获取密钥前往 https://ling.tbox.cn/open', { status: 200 });
     }
-    if (url.pathname === "/models" || url.pathname === "/v1/models") {
+    if (url.pathname === '/models' || url.pathname === '/v1/models') {
       try {
-        const res = await fetch("https://lingstudio.tbox.cn/meta/model/list", {
-          headers: { referer: "https://ling.tbox.cn/" },
+        const res = await fetch('https://lingstudio.tbox.cn/meta/model/list', {
+          headers: { referer: 'https://ling.tbox.cn/' },
         });
-        if (!res.ok) return Response.json({ data: [], object: "list" });
+        if (!res.ok) return Response.json({ data: [], object: 'list' });
         const json = await res.json();
-        const data = (json.data || []).filter((m) => m.status === "ACTIVE").map((m) => ({ id: m.code, object: "model" }));
-        return Response.json({ data, object: "list" });
+        const data = (json.data || []).filter((m) => m.status === 'ACTIVE').map((m) => ({ id: m.code, object: 'model' }));
+        return Response.json({ data, object: 'list' });
       } catch {
-        return Response.json({ data: [], object: "list" });
+        return Response.json({ data: [], object: 'list' });
       }
     }
     return fetch(`https://api.tbox.cn/api/llm${url.pathname}${url.search}`, req);

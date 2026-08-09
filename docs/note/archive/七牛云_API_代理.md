@@ -9,8 +9,8 @@
 cloudflare workers 部署：
 
 ```js
-const DOCS_URL = "https://www.qiniu.com/ai/models";
-const API_BASE = "https://api.qnaigc.com";
+const DOCS_URL = 'https://www.qiniu.com/ai/models';
+const API_BASE = 'https://api.qnaigc.com';
 
 async function fetchModels() {
   const res = await fetch(DOCS_URL);
@@ -21,7 +21,7 @@ async function fetchModels() {
   for (const match of section.matchAll(/"id":\s*"([^"]+)"[\s\S]*?"retirement_at":\s*"([^"]*)"/gi)) {
     const id = match[1];
     if (id && !(match[2] && new Date(match[2]) < new Date())) {
-      models.push({ id, object: "model" });
+      models.push({ id, object: 'model' });
     }
   }
   return models;
@@ -30,11 +30,11 @@ async function fetchModels() {
 export default {
   async fetch(req) {
     const url = new URL(req.url);
-    if (url.pathname === "/") {
-      return new Response("模型列表请查看 https://www.qiniu.com/ai/models", { status: 200 });
+    if (url.pathname === '/') {
+      return new Response('模型列表请查看 https://www.qiniu.com/ai/models', { status: 200 });
     }
-    if (url.pathname === "/models" || url.pathname === "/v1/models") {
-      return Response.json({ data: await fetchModels(), object: "list" });
+    if (url.pathname === '/models' || url.pathname === '/v1/models') {
+      return Response.json({ data: await fetchModels(), object: 'list' });
     }
     return fetch(`${API_BASE}${url.pathname}${url.search}`, req);
   },

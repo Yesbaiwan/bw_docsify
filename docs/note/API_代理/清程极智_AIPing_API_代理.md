@@ -10,11 +10,11 @@
 export default {
   async fetch(req) {
     const url = new URL(req.url);
-    if (url.pathname === "/") {
-      return new Response("请在 https://aiping.cn/user/called-records 查看调用记录");
+    if (url.pathname === '/') {
+      return new Response('请在 https://aiping.cn/user/called-records 查看调用记录');
     }
-    if (url.pathname === "/v1/models" || url.pathname === "/models") {
-      const res = await fetch("https://aiping.cn/api/v1/models");
+    if (url.pathname === '/v1/models' || url.pathname === '/models') {
+      const res = await fetch('https://aiping.cn/api/v1/models');
       if (!res.ok) return new Response(await res.text(), { status: res.status });
       const { data, object } = await res.json();
       const freeModels = data.filter((m) => m.price?.input_price_range?.[0] === 0 && m.price?.output_price_range?.[0] === 0);

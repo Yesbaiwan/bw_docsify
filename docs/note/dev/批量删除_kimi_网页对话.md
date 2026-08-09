@@ -7,7 +7,7 @@
 F12 打开控制台，输入以下代码：
 
 ```js
-document.querySelectorAll("input[type=checkbox]:not(:checked)").forEach((c) => c.click());
+document.querySelectorAll('input[type=checkbox]:not(:checked)').forEach((c) => c.click());
 ```
 
 效果如下：

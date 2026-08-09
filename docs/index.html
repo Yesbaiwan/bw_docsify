@@ -5,53 +5,27 @@
     <title>ℬ𝒶𝒾𝒲𝒶𝓃</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Description" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     <link rel="icon" href="_media/favicon.ico" />
     <!-- Docsify v5 Core Theme -->
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css"
-    />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css" />
     <!-- Docsify v5 Vue Theme (add-on，保持 v4 外观) -->
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/addons/vue.min.css"
-    />
-    <!-- 不好看放弃使用 -->
-    <!--
-      Catppuccin 主题
-      flavor: latte | frappe | macchiato | mocha
-      accent: rosewater | flamingo | pink | mauve | red | maroon | peach | yellow | green | teal | sky | sapphire | blue | lavender
-    -->
-    <!-- <link rel="stylesheet" href="https://docsify.catppuccin.com/latte/flamingo.css" /> -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/addons/vue.min.css" />
     <!-- KaTeX CSS -->
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"
-    />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
     <!-- 自定义侧边栏样式（替代社区插件） -->
     <link rel="stylesheet" href="_assets/sidebar.css" />
     <!-- 霞鹜文楷字体 -->
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css"
-    />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
     <!-- Maple Mono CN 字体 -->
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/@mogeko/maple-mono-cn/dist/font/result.min.css"
-    />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mogeko/maple-mono-cn/dist/font/result.min.css" />
     <style>
       :root {
         --font-code: 'Maple Mono CN', monospace;
       }
 
       body {
-        font-family:
-          'LXGW WenKai', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        font-family: 'LXGW WenKai', 'PingFang SC', 'Microsoft YaHei', sans-serif;
         color: #1a1a1a !important;
         font-weight: 500 !important;
       }
@@ -205,10 +179,7 @@
                     .find((c) => c.startsWith('lang-'))
                     ?.replace('lang-', '') || 'text';
 
-                pre.outerHTML = await window.shikiHighlight(
-                  block.textContent,
-                  lang,
-                );
+                pre.outerHTML = await window.shikiHighlight(block.textContent, lang);
               }
 
               // Shiki 高亮后重新添加复制按钮
@@ -283,10 +254,7 @@
     </script>
 
     <!-- 红心点击特效 -->
-    <script
-      src="https://cdn.jsdelivr.net/gh/mukeshkushwahae/click-heart-animation@main/dist/click-heart-animation.min.js"
-      defer
-    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/mukeshkushwahae/click-heart-animation@main/dist/click-heart-animation.min.js" defer></script>
     <script>
       window.addEventListener('DOMContentLoaded', () => {
         ClickHeartAnimation.init();

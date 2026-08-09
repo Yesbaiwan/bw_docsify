@@ -8,17 +8,17 @@
 export default {
   async fetch(req) {
     const url = new URL(req.url);
-    const BASE = "https://api.poe.com";
+    const BASE = 'https://api.poe.com';
 
-    if (url.pathname === "/") {
-      return new Response("获取密钥前往 https://poe.com/api/keys", { status: 200 });
+    if (url.pathname === '/') {
+      return new Response('获取密钥前往 https://poe.com/api/keys', { status: 200 });
     }
 
-    if (url.pathname === "/models" || url.pathname === "/v1/models") {
+    if (url.pathname === '/models' || url.pathname === '/v1/models') {
       const res = await fetch(`${BASE}/v1/models${url.search}`, req);
       if (!res.ok) return new Response(await res.text(), { status: res.status });
       const data = await res.json();
-      const free = data.data?.filter((m) => m.pricing?.request === "0.00") || [];
+      const free = data.data?.filter((m) => m.pricing?.request === '0.00') || [];
       return Response.json({ object: data.object, free });
     }
 

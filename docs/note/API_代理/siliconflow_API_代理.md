@@ -7,15 +7,15 @@ export default {
   async fetch(req, env) {
     const url = new URL(req.url);
 
-    if (url.pathname === "/") {
-      return new Response("SiliconFlow 官网地址：https://cloud.siliconflow.cn/me/models", { status: 200 });
+    if (url.pathname === '/') {
+      return new Response('SiliconFlow 官网地址：https://cloud.siliconflow.cn/me/models', { status: 200 });
     }
 
-    if (url.pathname === "/models" || url.pathname === "/v1/models") {
-      const res = await fetch("https://busy-bear.siliconflow.cn/api/v1/playground/comprehensive/all", {
+    if (url.pathname === '/models' || url.pathname === '/v1/models') {
+      const res = await fetch('https://busy-bear.siliconflow.cn/api/v1/playground/comprehensive/all', {
         headers: {
           Authorization: `Bearer ${env.SILICONFLOW_API_KEY}`,
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
       if (!res.ok) return new Response(await res.text(), { status: res.status });
@@ -24,10 +24,10 @@ export default {
 
       // 过滤免费模型
       const freeModels = models.filter((m) => {
-        if (m.status !== "normal") return false;
-        if (m.price === "0") return true;
+        if (m.status !== 'normal') return false;
+        if (m.price === '0') return true;
         if (!m.pricing) return false;
-        return m.pricing.every((p) => p.price === "0");
+        return m.pricing.every((p) => p.price === '0');
       });
 
       // 统计每个 sub_type 的数量
@@ -44,14 +44,14 @@ export default {
       // 转换为 OpenAI 兼容格式
       const openaiModels = sortedModels.map((m) => ({
         id: m.modelName,
-        object: "model",
+        object: 'model',
         context_length: m.contextLen || 0,
         type: m.type,
         sub_type: m.subType,
       }));
 
       return Response.json({
-        object: "list",
+        object: 'list',
         data: openaiModels,
       });
     }

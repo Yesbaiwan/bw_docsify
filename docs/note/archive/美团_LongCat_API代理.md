@@ -11,8 +11,8 @@ API 获取页面：https://longcat.chat/platform/usage
 cloudflare workers 部署：
 
 ```js
-const DOCS_URL = "https://longcat.chat/platform/docs/zh/";
-const API_BASE = "https://api.longcat.chat/openai";
+const DOCS_URL = 'https://longcat.chat/platform/docs/zh/';
+const API_BASE = 'https://api.longcat.chat/openai';
 
 async function fetchModels() {
   const res = await fetch(DOCS_URL);
@@ -20,8 +20,8 @@ async function fetchModels() {
   const models = [];
   for (const row of html.matchAll(/<tr>[\s\S]*?<\/tr>/gi)) {
     const cell = row[0].match(/<t[dh]>([\s\S]*?)<\/t[dh]>/i)?.[1];
-    const name = cell?.replace(/<.*?>/g, "").trim();
-    if (name.includes("LongCat")) models.push({ id: name, object: "model" });
+    const name = cell?.replace(/<.*?>/g, '').trim();
+    if (name.includes('LongCat')) models.push({ id: name, object: 'model' });
   }
   return models;
 }
@@ -29,11 +29,11 @@ async function fetchModels() {
 export default {
   async fetch(req) {
     const url = new URL(req.url);
-    if (url.pathname === "/") {
-      return new Response("模型列表请查看 https://longcat.chat/platform/docs/zh/#支持的模型", { status: 200 });
+    if (url.pathname === '/') {
+      return new Response('模型列表请查看 https://longcat.chat/platform/docs/zh/#支持的模型', { status: 200 });
     }
-    if (url.pathname === "/models" || url.pathname === "/v1/models") {
-      return Response.json({ data: await fetchModels(), object: "list" });
+    if (url.pathname === '/models' || url.pathname === '/v1/models') {
+      return Response.json({ data: await fetchModels(), object: 'list' });
     }
     return fetch(`${API_BASE}${url.pathname}${url.search}`, req);
   },

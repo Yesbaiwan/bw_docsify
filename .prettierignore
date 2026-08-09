@@ -1,0 +1,4 @@
+# 忽略 Prettier 格式化
+docs/_sidebar.md
+docs/home.md
+scripts/template.md
