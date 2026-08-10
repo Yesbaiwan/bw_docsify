@@ -15,6 +15,9 @@ Thumbs.db
 .claude/
 .cursor/
 .trae/
+.zcode/
+
+AGENTS.md
 
 # 生图
 imgen-task/
