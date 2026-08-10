@@ -2,7 +2,8 @@
   "name": "bw-docsify",
   "private": true,
   "scripts": {
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "dev":"docsify serve docs"
   },
   "devDependencies": {
     "prettier": "^3.9.6"

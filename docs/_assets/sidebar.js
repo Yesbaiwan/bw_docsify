@@ -10,6 +10,7 @@
     const level = (window.$docsify && window.$docsify.sidebarDisplayLevel) || 1;
 
     document.querySelectorAll('.sidebar-nav ul:not(.app-sub-sidebar) > li.group').forEach((li) => {
+      // 标记已绑定，避免 doneEach 重复初始化
       if (li.dataset.sidebarBound) return;
       li.dataset.sidebarBound = '1';
 

@@ -1,0 +1,77 @@
+/* ============================================================
+   页面级主题观感（字体 / 内容区宽度 / 标题样式 / 更新时间）
+   说明：docsify 主题之外的个性化调整，集中于此文件
+   ============================================================ */
+
+/* ---------- 内容区宽度（v5 默认 72ch，v4 为 80%） ---------- */
+:root {
+  --content-max-width: 75%;
+}
+
+/* ---------- 正文字体 ---------- */
+body {
+  font-family: 'LXGW WenKai', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #1a1a1a !important;
+  /* 霞鹜文楷笔画偏细，主题默认 350 字重太淡，加粗到 500 */
+  font-weight: 500 !important;
+}
+
+/* ---------- 标题 ---------- */
+/* 字号：阶梯式等差递减（每级 0.2rem），H6 与正文同大 */
+.markdown-section h1 {
+  font-size: 2rem;
+}
+
+.markdown-section h2 {
+  font-size: 1.8rem;
+  border-bottom: none; /* 去掉 v5 主题给 H2 的分割线（v4 无此设计） */
+  padding-bottom: 0;
+  margin-bottom: 0.8rem;
+}
+
+.markdown-section h3 {
+  font-size: 1.6rem;
+}
+
+.markdown-section h4 {
+  font-size: 1.4rem;
+}
+
+.markdown-section h5 {
+  font-size: 1.2rem;
+}
+
+.markdown-section h6 {
+  font-size: 1rem;
+}
+
+/* 标题间距恢复 v4 观感（v5 的 +* 规则会清零标题后元素及下一个标题的 margin-top，
+   导致标题与内容、连续标题之间间距过小） */
+.markdown-section :where(h1, h2, h3, h4, h5, h6) {
+  margin-top: 2.5rem;
+}
+
+/* 标题后的普通元素恢复 margin-top（连续标题除外，其间距由后一个标题的 margin-top 决定） */
+.markdown-section :is(h1, h2, h3, h4, h5, h6) + *:not(:is(h1, h2, h3, h4, h5, h6)) {
+  margin-top: var(--margin-block);
+}
+
+/* 连续标题：显式恢复后一个标题的 margin-top（覆盖 v5 的 +* 清零规则） */
+.markdown-section :is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 2.5rem;
+}
+
+/* ---------- 内容区（v4 观感；宽度由上方 --content-max-width 变量控制） ---------- */
+.markdown-section {
+  padding: 30px 15px 40px;
+}
+
+/* ---------- 最后更新时间插件样式（docsify-updated 渲染的底部时间戳） ---------- */
+.update-time {
+  color: gray;
+  font-size: 12px;
+  text-align: left;
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
