@@ -17,9 +17,9 @@
   - [清程极智 AIPing API 代理](note/API_代理/清程极智_AIPing_API_代理.md)
 
 - dev
+  - [Trae 项目规则](note/dev/Trae_项目规则.md)
   - [Cherry Studio 美化](note/dev/Cherry_Studio_美化.md)
   - [iKuuu 机场签到脚本](note/dev/iKuuu_机场签到脚本.md)
-  - [Trae 项目规则](note/dev/Trae_项目规则.md)
   - [VSCode文件空包折叠展开](note/dev/VSCode文件空包折叠展开.md)
   - [Windows 上禁用 CapsLock 键](note/dev/Windows_上禁用_CapsLock_键.md)
   - [Windows 字体安装](note/dev/Windows_字体安装.md)
