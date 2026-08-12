@@ -17,8 +17,12 @@ export default {
       const res = await fetch(`${BASE}/call/mdl_info_pagination?num=10000`);
       if (!res.ok) return new Response(await res.text(), { status: res.status });
       const data = await res.json();
-      data.data = data.data?.filter((m) => m.model_ratio === 0) || [];
-      return Response.json(data);
+      const free = data.data?.filter((m) => m.model_ratio === 0) || [];
+      const models = free.map((m) => {
+        const { model, ...rest } = m;
+        return { id: model, object: 'model', ...rest };
+      });
+      return Response.json({ object: 'list', data: models });
     }
 
     return fetch(`${BASE}${url.pathname}${url.search}`, req);
