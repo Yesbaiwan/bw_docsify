@@ -18,6 +18,7 @@
   - [清程极智 AIPing API 代理](note/API_代理/清程极智_AIPing_API_代理.md)
 
 - dev
+  - [浏览器翻译拓展](note/dev/浏览器翻译拓展.md)
   - [Trae 项目规则](note/dev/Trae_项目规则.md)
   - [Cherry Studio 美化](note/dev/Cherry_Studio_美化.md)
   - [iKuuu 机场签到脚本](note/dev/iKuuu_机场签到脚本.md)

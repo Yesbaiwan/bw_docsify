@@ -24,7 +24,8 @@
   - [清程极智 AIPing API 代理](note/API_代理/清程极智_AIPing_API_代理.md) 2026-08-09
 
 - dev
-  - [Trae 项目规则](note/dev/Trae_项目规则.md) 2026-08-11
+  - [浏览器翻译拓展](note/dev/浏览器翻译拓展.md) 2026-08-15
+  - [Trae 项目规则](note/dev/Trae_项目规则.md) 2026-08-13
   - [Cherry Studio 美化](note/dev/Cherry_Studio_美化.md) 2026-08-09
   - [iKuuu 机场签到脚本](note/dev/iKuuu_机场签到脚本.md) 2026-08-09
   - [VSCode文件空包折叠展开](note/dev/VSCode文件空包折叠展开.md) 2026-08-09
