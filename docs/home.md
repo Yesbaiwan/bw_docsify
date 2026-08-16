@@ -15,13 +15,13 @@
   - [霍格沃茨魔法学校](note/大窝随笔/霍格沃茨魔法学校.md) 2026-08-09
 
 - API 代理
+  - [六合一聚合](note/API_代理/六合一聚合.md) 2026-08-16
+  - [清程极智 AIPing API 代理](note/API_代理/清程极智_AIPing_API_代理.md) 2026-08-16
   - [Aihubmix API 代理](note/API_代理/Aihubmix_API_代理.md) 2026-08-12
-  - [六合一聚合](note/API_代理/六合一聚合.md) 2026-08-12
   - [kilo free API 代理](note/API_代理/kilo_free_API_代理.md) 2026-08-09
   - [OpenRouter API 代理](note/API_代理/OpenRouter_API_代理.md) 2026-08-09
   - [Poe 大模型 API 代理](note/API_代理/Poe_大模型_API_代理.md) 2026-08-09
   - [siliconflow API 代理](note/API_代理/siliconflow_API_代理.md) 2026-08-09
-  - [清程极智 AIPing API 代理](note/API_代理/清程极智_AIPing_API_代理.md) 2026-08-09
 
 - dev
   - [浏览器翻译拓展](note/dev/浏览器翻译拓展.md) 2026-08-15

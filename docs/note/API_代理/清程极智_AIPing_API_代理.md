@@ -1,6 +1,6 @@
 # 清程极智 AIPing API 代理
 
-新发现的一家国内的 AI 大模型聚合平台 AIPing，走邀请注册双方各得 20 元平台奖励金，我的邀请码：https://www.aiping.cn/#?invitation_code=AMTMFW
+新发现的一家国内的 AI 大模型聚合平台 AIPing，走邀请注册双方各得 20 元平台奖励金，我的邀请码：https://aiping.cn/#?invitation_code=UV9ZVQSSZE
 
 ## 透明代理
 
@@ -17,7 +17,13 @@ export default {
       const res = await fetch('https://aiping.cn/api/v1/models');
       if (!res.ok) return new Response(await res.text(), { status: res.status });
       const { data, object } = await res.json();
-      const freeModels = data.filter((m) => m.price?.input_price_range?.[0] === 0 && m.price?.output_price_range?.[0] === 0);
+      const excluded = ['text2video', 'image2video', 'video2video'];
+      const freeModels = data.filter(
+        (m) =>
+          m.price?.input_price_range?.[0] === 0 &&
+          m.price?.output_price_range?.[0] === 0 &&
+          ![].concat(m.model_type).some((t) => excluded.includes(t)),
+      );
       return Response.json({ object, data: freeModels });
     }
     return fetch(`https://aiping.cn/api${url.pathname}${url.search}`, req);

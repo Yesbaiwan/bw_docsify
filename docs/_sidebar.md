@@ -9,13 +9,13 @@
   - [霍格沃茨魔法学校](note/大窝随笔/霍格沃茨魔法学校.md)
 
 - API 代理
-  - [Aihubmix API 代理](note/API_代理/Aihubmix_API_代理.md)
   - [六合一聚合](note/API_代理/六合一聚合.md)
+  - [清程极智 AIPing API 代理](note/API_代理/清程极智_AIPing_API_代理.md)
+  - [Aihubmix API 代理](note/API_代理/Aihubmix_API_代理.md)
   - [kilo free API 代理](note/API_代理/kilo_free_API_代理.md)
   - [OpenRouter API 代理](note/API_代理/OpenRouter_API_代理.md)
   - [Poe 大模型 API 代理](note/API_代理/Poe_大模型_API_代理.md)
   - [siliconflow API 代理](note/API_代理/siliconflow_API_代理.md)
-  - [清程极智 AIPing API 代理](note/API_代理/清程极智_AIPing_API_代理.md)
 
 - dev
   - [浏览器翻译拓展](note/dev/浏览器翻译拓展.md)
