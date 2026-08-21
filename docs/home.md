@@ -14,16 +14,8 @@
   - [百万的 API KEY](note/大窝随笔/百万的_API_KEY.md) 2026-08-10
   - [【新人必读】百万的大窝群规](note/大窝随笔/【新人必读】百万的大窝群规.md) 2026-08-09
 
-- API 代理
-  - [六合一聚合](note/API_代理/六合一聚合.md) 2026-08-16
-  - [清程极智 AIPing API 代理](note/API_代理/清程极智_AIPing_API_代理.md) 2026-08-16
-  - [Aihubmix API 代理](note/API_代理/Aihubmix_API_代理.md) 2026-08-12
-  - [kilo free API 代理](note/API_代理/kilo_free_API_代理.md) 2026-08-09
-  - [OpenRouter API 代理](note/API_代理/OpenRouter_API_代理.md) 2026-08-09
-  - [Poe 大模型 API 代理](note/API_代理/Poe_大模型_API_代理.md) 2026-08-09
-  - [siliconflow API 代理](note/API_代理/siliconflow_API_代理.md) 2026-08-09
-
 - dev
+  - [免费 API 多渠道聚合](note/dev/免费_API_多渠道聚合.md) 2026-08-21
   - [浏览器翻译拓展](note/dev/浏览器翻译拓展.md) 2026-08-15
   - [Trae 项目规则](note/dev/Trae_项目规则.md) 2026-08-13
   - [Cherry Studio 美化](note/dev/Cherry_Studio_美化.md) 2026-08-09

@@ -1,13 +1,16 @@
-# 六合一聚合
+# 免费 API 多渠道聚合
 
-六个渠道每个都建一个 worker 太麻烦了，所以做了一个聚合 worker，将六个渠道的 API 都聚合到一个 worker 中。
+多个渠道每个都建一个 worker 太麻烦了，所以做了一个聚合 worker，将多个渠道的 API 都聚合到一个 worker 中。
 
 注意：
 
-- `siliconflow` 渠道需要添加环境变量 `SILICONFLOW_API_KEY`，值为 siliconflow 的 API Key。
-- 六个渠道的名称是：`aihubmix`、`kilo`、`aiping`、`poe`、`openrouter`、`siliconflow`。
+- 此代码将多个渠道的免费的模型过滤出来，你看到的不是所有模型，只是可以免费调用的模型。
+- 这几个渠道的名称是：`aihubmix`、`kilo`、`kilo-openrouter`、`aiping`、`poe`、`openrouter`、`siliconflow`。
+- `siliconflow` 渠道需要添加环境变量 `SILICONFLOW_API_KEY` 来获取模型列表，值为 siliconflow 的 API Key。
+- `kilo` 和 `kilo-openrouter` 是同一个渠道，只是上游接口不同，这两个渠道密钥填写 `anonymous` 即可。其余渠道密钥填写自己的密钥。
 - 每个渠道的通过 `/渠道名` 来访问，例如，你的 worker 地址是 `https://xxx.workers.dev/`，那么 `/kilo` 就是 `https://xxx.workers.dev/kilo`，推荐自定义域名使用。
-- 不想部署直接用我的 worker 地址：`https://free.newapi.me` 来访问
+- 不再提供单独的渠道的代码，维护优先，此聚合拥有之前的全部渠道。
+- 不想部署直接用我的 worker 地址：`https://free.newapi.me` 来访问。
 
 ```js
 const CHANNELS = {
@@ -26,7 +29,7 @@ const CHANNELS = {
       return { object: 'list', data: models };
     },
   },
-  kilo: {
+  'kilo-openrouter': {
     base: 'https://api.kilo.ai/api/openrouter',
     root: 'Hello World',
     async models() {
@@ -38,6 +41,18 @@ const CHANNELS = {
     },
     transform(path) {
       return path.replace(/^\/v1/, '');
+    },
+  },
+
+  kilo: {
+    base: 'https://api.kilo.ai/api/gateway',
+    root: 'Hello World',
+    async models() {
+      const res = await fetch(`${this.base}/v1/models`);
+      if (!res.ok) return { data: [], object: 'list' };
+      const json = await res.json();
+      const free = json.data?.filter((m) => m.isFree === true) || [];
+      return { object: json.object, data: free };
     },
   },
 
@@ -56,6 +71,33 @@ const CHANNELS = {
           ![].concat(m.model_type).some((t) => excluded.includes(t)),
       );
       return { object, data: free };
+    },
+    async transform(path, req) {
+      if (['POST', 'PUT', 'PATCH'].includes(req.method)) {
+        try {
+          const body = await req.clone().json();
+          body.extra_body = {
+            provider: {
+              sort: ['throughput'],
+              input_price_range: [0, 0],
+              output_price_range: [0, 0],
+              allow_fallbacks: false,
+            },
+          };
+          const fwdHeaders = new Headers(req.headers);
+          fwdHeaders.delete('content-length');
+          fwdHeaders.set('Content-Type', 'application/json');
+          const newReq = new Request(req.url, {
+            method: req.method,
+            headers: fwdHeaders,
+            body: JSON.stringify(body),
+          });
+          return { path, req: newReq };
+        } catch {
+          // fall through
+        }
+      }
+      return path;
     },
   },
 
@@ -149,7 +191,7 @@ async function handleChannel(channel, path, search, req, env) {
   }
 
   if (config.transform) {
-    const result = config.transform(path, req, env);
+    const result = await config.transform(path, req, env);
     if (typeof result === 'object' && result.path) {
       return fetch(`${config.base}${result.path}${search}`, result.req);
     }
@@ -164,7 +206,12 @@ export default {
     const pathParts = url.pathname.split('/').filter(Boolean);
 
     if (pathParts.length === 0) {
-      return new Response('API Gateway - Available channels: /aihubmix, /kilo, /aiping, /poe, /openrouter, /siliconflow', { status: 200 });
+      return new Response(
+        'API Gateway - Available channels: /aihubmix, /kilo, /kilo-openrouter, /aiping, /poe, /openrouter, /siliconflow',
+        {
+          status: 200,
+        },
+      );
     }
 
     const channel = pathParts[0];

@@ -8,16 +8,8 @@
   - [百万的 API KEY](note/大窝随笔/百万的_API_KEY.md)
   - [【新人必读】百万的大窝群规](note/大窝随笔/【新人必读】百万的大窝群规.md)
 
-- API 代理
-  - [六合一聚合](note/API_代理/六合一聚合.md)
-  - [清程极智 AIPing API 代理](note/API_代理/清程极智_AIPing_API_代理.md)
-  - [Aihubmix API 代理](note/API_代理/Aihubmix_API_代理.md)
-  - [kilo free API 代理](note/API_代理/kilo_free_API_代理.md)
-  - [OpenRouter API 代理](note/API_代理/OpenRouter_API_代理.md)
-  - [Poe 大模型 API 代理](note/API_代理/Poe_大模型_API_代理.md)
-  - [siliconflow API 代理](note/API_代理/siliconflow_API_代理.md)
-
 - dev
+  - [免费 API 多渠道聚合](note/dev/免费_API_多渠道聚合.md)
   - [浏览器翻译拓展](note/dev/浏览器翻译拓展.md)
   - [Trae 项目规则](note/dev/Trae_项目规则.md)
   - [Cherry Studio 美化](note/dev/Cherry_Studio_美化.md)
