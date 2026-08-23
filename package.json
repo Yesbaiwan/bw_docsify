@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "format": "prettier --write .",
-    "dev":"docsify serve docs"
+    "dev":"docsify serve docs --port 4000"
   },
   "devDependencies": {
     "prettier": "^3.9.6"

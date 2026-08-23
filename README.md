@@ -14,5 +14,5 @@ node scripts/update-sidebar.js
 要预览博客，运行：
 
 ```bash
-docsify serve docs
+docsify serve docs --port 4000
 ```
