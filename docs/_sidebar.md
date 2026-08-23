@@ -3,6 +3,7 @@
   - [测试教程](note/测试/测试教程.md)
 
 - 大窝随笔
+  - [iOS 直连 LinuxDo](note/大窝随笔/iOS_直连_LinuxDo.md)
   - [霍格沃茨魔法学校(修订记录)](note/大窝随笔/霍格沃茨魔法学校(修订记录).md)
   - [霍格沃茨魔法学校](note/大窝随笔/霍格沃茨魔法学校.md)
   - [百万的 API KEY](note/大窝随笔/百万的_API_KEY.md)
