@@ -1,6 +1,10 @@
 # DeepSeek 自动启用识图模式
 
-因为就四十行代码，发油猴/github都太麻烦，直接贴出代码。
+简单问题经常直接在网页上问AI。之前用豆包，但是豆包现在网页经常打开又卡又慢，<s>deepseek 有多模态了你还不思进取，那我可就喜新厌旧了</s>
+
+没 token 的时候也不妨回归网页对话编程🤣
+
+因为就四十行代码，发油猴/github都太麻烦，直接贴代码。
 
 ```js
 // ==UserScript==
@@ -49,3 +53,5 @@
   observer.observe(document.body, { childList: true, subtree: true });
 })();
 ```
+
+再推荐发现的一个网页版 deepseek 美化吧，github 搜 djh2203/DeepSeek-Refined，这里就不贴出来了。
