@@ -1,0 +1,49 @@
+/* ============================================================
+   行内代码样式 + 点击复制
+   说明：覆盖 vue 附加主题的橘色 --code-color(#e96900)，
+     配色对齐 Shiki catppuccin-latte 代码块（mantle 底 / text 字色）
+   依赖：_assets/inline-code.js（点击复制 + 气泡提示）
+   ============================================================ */
+
+.markdown-section :not(pre) > code {
+  color: #4c4f69;
+  background: #e6e9ef;
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  /* 主题默认 0.875rem(14px) 比正文(15px) 小一号，放在标题里更悬殊；改为随所在文字 */
+  font-size: 1em;
+}
+
+/* 可点击复制的行内代码（inline-code.js 绑定后标记） */
+.markdown-section :not(pre) > code.copyable {
+  cursor: copy;
+  transition: background-color 0.15s ease;
+}
+
+.markdown-section :not(pre) > code.copyable:active {
+  background: #ccd0da; /* catppuccin-latte surface0，按下轻反馈 */
+}
+
+/* 复制结果气泡：全站一个元素，钉在触发处上方 */
+.copy-tip {
+  position: fixed;
+  z-index: 99;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(58, 58, 58, 0.88);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(2px);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+.copy-tip.show {
+  opacity: 1;
+  transform: none;
+}
