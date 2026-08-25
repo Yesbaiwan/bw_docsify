@@ -1,6 +1,7 @@
 # iOS 直连 LinuxDo
 
 > 原标题：iOS 一键配置 DNS，使用始皇的 doh 直连 linux.do
+>
 > 本文首发于 ：https://linux.do/t/topic/2760519
 
 一直以来我都是开代理上 L 站，以前发过帖但是没有仔细研究过。今天熬穿了索性找找方案。
