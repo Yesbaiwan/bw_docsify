@@ -10,8 +10,8 @@
   - [【新人必读】百万的大窝群规](note/大窝随笔/【新人必读】百万的大窝群规.md)
 
 - dev
-  - [DeepSeek 自动启用识图模式](note/dev/DeepSeek_自动启用识图模式.md)
   - [免费 API 多渠道聚合](note/dev/免费_API_多渠道聚合.md)
+  - [DeepSeek 自动启用识图模式](note/dev/DeepSeek_自动启用识图模式.md)
   - [浏览器翻译拓展](note/dev/浏览器翻译拓展.md)
   - [Trae 项目规则](note/dev/Trae_项目规则.md)
   - [Cherry Studio 美化](note/dev/Cherry_Studio_美化.md)
