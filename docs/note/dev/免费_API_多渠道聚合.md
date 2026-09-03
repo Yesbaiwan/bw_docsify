@@ -4,12 +4,12 @@
 
 注意：
 
-- 此代码将多个渠道的免费的模型过滤出来，你看到的不是所有模型，只是可以免费调用的模型。
-- 这几个渠道的名称是：`aihubmix`、`kilo`、`kilo-openrouter`、`aiping`、`poe`、`openrouter`、`siliconflow`。
+- 此代码将多个渠道的免费的模型过滤出来，你看到的不是所有模型，只是可以免费调用的模型，使用你自己的密钥来调用。
+- 这几个渠道的名称是：`aihubmix`、`kilo`、`kilo-openrouter`、`orcarouter`、`aiping`、`poe`、`openrouter`、`siliconflow`。
 - `siliconflow` 渠道需要添加环境变量 `SILICONFLOW_API_KEY` 来获取模型列表，值为 siliconflow 的 API Key。
 - `kilo` 和 `kilo-openrouter` 是同一个渠道，只是上游接口不同，这两个渠道密钥填写 `anonymous` 即可。其余渠道密钥填写自己的密钥。
 - 每个渠道的通过 `/渠道名` 来访问，例如，你的 worker 地址是 `https://xxx.workers.dev/`，那么 `/kilo` 就是 `https://xxx.workers.dev/kilo`，推荐自定义域名使用。
-- 不再提供单独的渠道的代码，维护优先，此聚合拥有之前的全部渠道。
+- 不再提供单独的渠道的代码，此聚合拥有之前的全部渠道。
 - 不想部署直接用我的 worker 地址：`https://free.newapi.me` 来访问。
 
 ```js
@@ -238,6 +238,19 @@ const CHANNELS = {
     },
   },
 
+  orcarouter: {
+    base: 'https://api.orcarouter.ai',
+    root: 'https://api.orcarouter.ai',
+    async models() {
+      const res = await fetch(`${this.base}/v1/models`);
+      if (!res.ok) return { data: [], object: 'list' };
+      const json = await res.json();
+      // orcarouter 免费模型通过 id 中的 'free' 标识（无 isFree 字段）
+      const free = json.data?.filter((m) => m.id?.includes('free')) || [];
+      return { object: 'list', data: free };
+    },
+  },
+
   aiping: {
     base: 'https://aiping.cn/api',
     root: '请在 https://aiping.cn/user/called-records 查看调用记录',
@@ -381,7 +394,7 @@ export default {
 
     if (pathParts.length === 0) {
       return new Response(
-        'API Gateway - Available channels: /aihubmix, /kilo, /kilo-openrouter, /aiping, /poe, /openrouter, /siliconflow',
+        'API Gateway - Available channels: /aihubmix, /kilo, /kilo-openrouter, /orcarouter, /aiping, /poe, /openrouter, /siliconflow',
         {
           status: 200,
         },
