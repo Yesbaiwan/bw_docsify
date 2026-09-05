@@ -5,7 +5,7 @@
 注意：
 
 - 此代码将多个渠道的免费的模型过滤出来，你看到的不是所有模型，只是可以免费调用的模型，使用你自己的密钥来调用。
-- 这几个渠道的名称是：`aihubmix`、`kilo`、`kilo-openrouter`、`orcarouter`、`aiping`、`poe`、`openrouter`、`siliconflow`。
+- 这几个渠道的名称是：`aihubmix`、`kilo`、`kilo-openrouter`、`orcarouter`、`aiping`、`poe`、`openrouter`、`siliconflow`、`bai`。
 - `siliconflow` 渠道需要添加环境变量 `SILICONFLOW_API_KEY` 来获取模型列表，值为 siliconflow 的 API Key。
 - `kilo` 和 `kilo-openrouter` 是同一个渠道，只是上游接口不同，这两个渠道密钥填写 `anonymous` 即可。其余渠道密钥填写自己的密钥。
 - 每个渠道的通过 `/渠道名` 来访问，例如，你的 worker 地址是 `https://xxx.workers.dev/`，那么 `/kilo` 就是 `https://xxx.workers.dev/kilo`，推荐自定义域名使用。
@@ -167,6 +167,19 @@ function chatThinkingTransform() {
   });
 }
 
+// b.ai 免费判定：pointPricing 中 inputPrice 与 outputPrice 均为 0，
+// 或 pricing 的 rate 全部为 0；缺少价格字段的模型不视为免费
+function isFree(m) {
+  const pp = m.pointPricing;
+  if (pp && Array.isArray(pp.units) && pp.units.length) {
+    const base = pp.units.filter((u) => u.name === 'inputPrice' || u.name === 'outputPrice');
+    if (base.length > 0 && base.every((u) => u.cost === 0)) return true;
+  }
+  const pr = m.pricing;
+  if (pr && Array.isArray(pr.units) && pr.units.length && pr.units.every((u) => u.rate === 0)) return true;
+  return false;
+}
+
 const CHANNELS = {
   // POE：/chat/completions 触发思考拆分与清理（实现见上方"POE 渠道专用代码"）
   poe: {
@@ -209,6 +222,45 @@ const CHANNELS = {
         return { id: model, object: 'model', ...rest };
       });
       return { object: 'list', data: models };
+    },
+  },
+
+  bai: {
+    base: 'https://api.b.ai',
+    root: 'B.AI 官网地址：https://chat.b.ai',
+    async models() {
+      const res = await fetch('https://chat.b.ai/trpc/lambda/config.getGlobalConfig?batch=1');
+      if (!res.ok) return { data: [], object: 'list' };
+      let data;
+      try {
+        data = await res.json();
+      } catch {
+        return { data: [], object: 'list' };
+      }
+      const providers = data?.[0]?.result?.data?.json?.serverConfig?.aiProvider || {};
+      const models = Object.entries(providers).flatMap(([provider, p]) => (p.serverModelLists || []).map((m) => ({ ...m, provider })));
+
+      // 过滤免费模型（排除已下线/维护中的）
+      const freeModels = models.filter((m) => m.enabled !== false && !m.isMaintenance && isFree(m));
+
+      // 转换为 OpenAI 兼容格式：只保留全模型共有字段与标准能力标志，
+      // 价格（pointPricing / pricing）原样透出，不带时间类字段
+      const openaiModels = freeModels.map((m) => ({
+        id: m.id,
+        object: 'model',
+        displayName: m.displayName,
+        description: m.description,
+        context_length: m.contextWindowTokens || 0,
+        max_output_tokens: m.maxOutput || null,
+        type: m.type || 'chat',
+        vision: !!m.abilities?.vision,
+        function_call: !!m.abilities?.functionCall,
+        owned_by: m.providerId || m.provider,
+        pointPricing: m.pointPricing || null,
+        pricing: m.pricing || null,
+      }));
+
+      return { object: 'list', data: openaiModels };
     },
   },
   'kilo-openrouter': {
@@ -394,7 +446,7 @@ export default {
 
     if (pathParts.length === 0) {
       return new Response(
-        'API Gateway - Available channels: /aihubmix, /kilo, /kilo-openrouter, /orcarouter, /aiping, /poe, /openrouter, /siliconflow',
+        'API Gateway - Available channels: /aihubmix, /bai, /kilo, /kilo-openrouter, /orcarouter, /aiping, /poe, /openrouter, /siliconflow',
         {
           status: 200,
         },
