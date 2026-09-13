@@ -10,10 +10,10 @@
   - [【新人必读】百万的大窝群规](note/大窝随笔/【新人必读】百万的大窝群规.md)
 
 - dev
-  - [免费 API 多渠道聚合](note/dev/免费_API_多渠道聚合.md)
-  - [DeepSeek 自动启用识图模式](note/dev/DeepSeek_自动启用识图模式.md)
   - [浏览器翻译拓展](note/dev/浏览器翻译拓展.md)
   - [Trae 项目规则](note/dev/Trae_项目规则.md)
+  - [免费 API 多渠道聚合](note/dev/免费_API_多渠道聚合.md)
+  - [DeepSeek 自动启用识图模式](note/dev/DeepSeek_自动启用识图模式.md)
   - [Cherry Studio 美化](note/dev/Cherry_Studio_美化.md)
   - [iKuuu 机场签到脚本](note/dev/iKuuu_机场签到脚本.md)
   - [VSCode文件空包折叠展开](note/dev/VSCode文件空包折叠展开.md)
