@@ -5,9 +5,9 @@
 - 大窝随笔
   - [iOS 直连 LinuxDo](note/大窝随笔/iOS_直连_LinuxDo.md)
   - [【新人必读】百万的大窝群规](note/大窝随笔/【新人必读】百万的大窝群规.md)
+  - [百万的 API KEY](note/大窝随笔/百万的_API_KEY.md)
   - [霍格沃茨魔法学校(修订记录)](note/大窝随笔/霍格沃茨魔法学校(修订记录).md)
   - [霍格沃茨魔法学校](note/大窝随笔/霍格沃茨魔法学校.md)
-  - [百万的 API KEY](note/大窝随笔/百万的_API_KEY.md)
 
 - dev
   - [DeepSeek 自动启用识图模式](note/dev/DeepSeek_自动启用识图模式.md)
