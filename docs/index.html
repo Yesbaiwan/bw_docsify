@@ -1,125 +1,66 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
+    <!-- ========== 基础 ========== -->
     <meta charset="UTF-8" />
     <title>ℬ𝒶𝒾𝒲𝒶𝓃</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Description" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     <link rel="icon" href="_media/favicon.ico" />
-    <!-- Docsify v5 Core Theme -->
+
+    <!-- ========== Docsify v5 主题（core + vue addon，保持 v4 外观） ========== -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css" />
-    <!-- Docsify v5 Vue Theme (add-on，保持 v4 外观) -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/addons/vue.min.css" />
-    <!-- KaTeX CSS -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
-    <!-- 自定义侧边栏样式（替代社区插件） -->
-    <link rel="stylesheet" href="_assets/sidebar.css" />
-    <!-- 代码块样式（Shiki 高亮 + 复制按钮） -->
-    <link rel="stylesheet" href="_assets/code-block.css" />
-    <!-- 行内代码样式（点击复制） -->
-    <link rel="stylesheet" href="_assets/inline-code.css" />
-    <!-- 页面级主题观感（字体 / 内容区宽度 / 标题样式等） -->
-    <link rel="stylesheet" href="_assets/theme.css" />
-    <!-- 霞鹜文楷字体 -->
+
+    <!-- ========== 字体（霞鹜文楷正文 / Maple Mono CN 代码） ========== -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
-    <!-- Maple Mono CN 字体 -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mogeko/maple-mono-cn/dist/font/result.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mogeko/maple-mono-cn@7.9.0/dist/font/result.min.css" />
+
+    <!-- ========== KaTeX 公式样式 ========== -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.css" />
+
+    <!-- ========== 自研样式 ========== -->
+    <link rel="stylesheet" href="_assets/sidebar.css" />
+    <link rel="stylesheet" href="_assets/code-block.css" />
+    <link rel="stylesheet" href="_assets/inline-code.css" />
+    <link rel="stylesheet" href="_assets/theme.css" />
   </head>
   <body>
     <div id="app"></div>
-    <script>
-      // 代码块的 Shiki 高亮 + 复制按钮由 _assets/code-block.js 以插件形式注入
-      window.$docsify = {
-        name: '百万的博客',
-        loadSidebar: true,
-        alias: {
-          '/.*/_sidebar.md': '/_sidebar.md',
-        },
-        topMargin: 30,
-        homepage: 'home.md',
 
-        // 分页导航
-        pagination: {
-          previousText: '上一篇',
-          nextText: '下一篇',
-          crossChapter: true,
-          crossChapterText: true,
-        },
+    <!-- ========== Docsify 配置（须在核心脚本之前加载） ========== -->
+    <script src="_assets/config.js"></script>
 
-        // 字数统计
-        count: {
-          countable: true,
-          fontsize: '0.9em',
-          language: 'chinese',
-        },
-
-        // 最后更新时间插件（docsify-updated）
-        timeUpdater: {
-          text: "<div class='update-time'>最后更新时间: {docsify-updated}</div>",
-          formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}',
-          whereToPlace: 'bottom',
-        },
-
-        // 侧边栏折叠配置 - 默认展开层级
-        sidebarDisplayLevel: 2,
-
-        // 全文搜索配置
-        search: {
-          maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-          paths: 'auto', // 自动索引所有页面
-          placeholder: '搜索文档...',
-          noData: '找不到相关结果',
-          depth: 3, // 搜索标题的最大层级
-        },
-
-        // Mermaid 配置
-        mermaidConfig: {
-          querySelector: '.mermaid',
-        },
-
-        // LaTeX 公式配置（docsify-latex，默认 $...$ / $$...$$）
-        latex: {},
-      };
-    </script>
-    <!-- Docsify v5 -->
+    <!-- ========== Docsify v5 核心 ========== -->
     <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
 
+    <!-- ========== 第三方插件 ========== -->
     <!-- LaTeX 公式（docsify-latex，引擎用 KaTeX） -->
-    <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-latex@0.5.2/dist/docsify-latex.min.js"></script>
-    <!-- 分页导航插件 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-    <!-- 图片缩放插件（v5 内置） -->
+    <!-- 分页导航 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-pagination@2.10.1/dist/docsify-pagination.min.js"></script>
+    <!-- 图片缩放（v5 内置插件） -->
     <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/zoom-image.min.js"></script>
-    <!-- 字数统计插件 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify-count@latest/dist/countable.min.js"></script>
-    <!-- 最后更新时间插件 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
-    <!-- 搜索插件（v5 内置） -->
+    <!-- 字数统计 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-count@1.1.0/dist/countable.min.js"></script>
+    <!-- 最后更新时间 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-updated@1.0.5/src/time-updater.min.js"></script>
+    <!-- 全文搜索（v5 内置插件） -->
     <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/search.min.js"></script>
-    <!-- Mermaid -->
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
-      window.mermaid = mermaid;
-    </script>
+    <!-- Mermaid 图表（ESM 引擎 + 渲染插件） -->
+    <script type="module" src="_assets/mermaid.js"></script>
     <script src="//unpkg.com/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
 
+    <!-- ========== 自研脚本 ========== -->
     <!-- 红心点击特效 -->
-    <script src="https://cdn.jsdelivr.net/gh/mukeshkushwahae/click-heart-animation@main/dist/click-heart-animation.min.js" defer></script>
-
-    <!-- 自定义侧边栏折叠交互（替代社区插件） -->
+    <script src="_assets/click-heart.js" defer></script>
+    <!-- 侧边栏折叠交互 -->
     <script src="_assets/sidebar.js"></script>
     <!-- 代码块：Shiki 高亮 + 复制按钮 -->
     <script src="_assets/code-block.js"></script>
     <!-- 行内代码：点击复制 -->
     <script src="_assets/inline-code.js"></script>
-
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        ClickHeartAnimation.init();
-      });
-    </script>
   </body>
 </html>
