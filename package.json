@@ -3,9 +3,9 @@
   "private": true,
   "scripts": {
     "format": "prettier --write .",
-    "dev":"docsify serve docs --port 4000"
+    "dev": "docsify serve docs --port 4000"
   },
   "devDependencies": {
-    "prettier": "^3.9.6"
+    "prettier": "^3.9.10"
   }
 }

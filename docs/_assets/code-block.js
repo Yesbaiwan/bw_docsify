@@ -9,7 +9,7 @@
 (function () {
   'use strict';
 
-  const SHIKI_URL = 'https://cdn.jsdelivr.net/npm/shiki@1/+esm';
+  const SHIKI_URL = 'https://cdn.jsdelivr.net/npm/shiki@4/+esm';
   const THEME = 'catppuccin-latte';
   // docsify 未标注语言的代码块默认 lang 为 markup，映射成 markdown
   // （其余 js/ts/py 等简写均为 Shiki 原生别名，无需再映射）
