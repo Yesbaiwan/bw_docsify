@@ -4,20 +4,20 @@
 
 - 大窝随笔
   - [iOS 直连 LinuxDo](note/大窝随笔/iOS_直连_LinuxDo.md)
+  - [【新人必读】百万的大窝群规](note/大窝随笔/【新人必读】百万的大窝群规.md)
   - [霍格沃茨魔法学校(修订记录)](note/大窝随笔/霍格沃茨魔法学校(修订记录).md)
   - [霍格沃茨魔法学校](note/大窝随笔/霍格沃茨魔法学校.md)
   - [百万的 API KEY](note/大窝随笔/百万的_API_KEY.md)
-  - [【新人必读】百万的大窝群规](note/大窝随笔/【新人必读】百万的大窝群规.md)
 
 - dev
+  - [DeepSeek 自动启用识图模式](note/dev/DeepSeek_自动启用识图模式.md)
+  - [Windows 上禁用 CapsLock 键](note/dev/Windows_上禁用_CapsLock_键.md)
   - [浏览器翻译拓展](note/dev/浏览器翻译拓展.md)
   - [Trae 项目规则](note/dev/Trae_项目规则.md)
   - [免费 API 多渠道聚合](note/dev/免费_API_多渠道聚合.md)
-  - [DeepSeek 自动启用识图模式](note/dev/DeepSeek_自动启用识图模式.md)
   - [Cherry Studio 美化](note/dev/Cherry_Studio_美化.md)
   - [iKuuu 机场签到脚本](note/dev/iKuuu_机场签到脚本.md)
   - [VSCode文件空包折叠展开](note/dev/VSCode文件空包折叠展开.md)
-  - [Windows 上禁用 CapsLock 键](note/dev/Windows_上禁用_CapsLock_键.md)
   - [Windows 字体安装](note/dev/Windows_字体安装.md)
   - [yt-dlp 下载B站视频](note/dev/yt-dlp_下载B站视频.md)
   - [修复 Windows 数字显示成符号的异常](note/dev/修复_Windows_数字显示成符号的异常.md)

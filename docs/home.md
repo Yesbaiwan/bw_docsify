@@ -9,21 +9,21 @@
   - [测试教程](note/测试/测试教程.md) 2026-04-25
 
 - 大窝随笔
-  - [iOS 直连 LinuxDo](note/大窝随笔/iOS_直连_LinuxDo.md) 2026-08-25
+  - [iOS 直连 LinuxDo](note/大窝随笔/iOS_直连_LinuxDo.md) 2026-10-13
+  - [【新人必读】百万的大窝群规](note/大窝随笔/【新人必读】百万的大窝群规.md) 2026-10-13
   - [霍格沃茨魔法学校(修订记录)](note/大窝随笔/霍格沃茨魔法学校(修订记录).md) 2026-08-25
   - [霍格沃茨魔法学校](note/大窝随笔/霍格沃茨魔法学校.md) 2026-08-25
   - [百万的 API KEY](note/大窝随笔/百万的_API_KEY.md) 2026-08-10
-  - [【新人必读】百万的大窝群规](note/大窝随笔/【新人必读】百万的大窝群规.md) 2026-08-09
 
 - dev
+  - [DeepSeek 自动启用识图模式](note/dev/DeepSeek_自动启用识图模式.md) 2026-10-13
+  - [Windows 上禁用 CapsLock 键](note/dev/Windows_上禁用_CapsLock_键.md) 2026-10-13
   - [浏览器翻译拓展](note/dev/浏览器翻译拓展.md) 2026-09-13
   - [Trae 项目规则](note/dev/Trae_项目规则.md) 2026-09-09
   - [免费 API 多渠道聚合](note/dev/免费_API_多渠道聚合.md) 2026-09-05
-  - [DeepSeek 自动启用识图模式](note/dev/DeepSeek_自动启用识图模式.md) 2026-08-23
   - [Cherry Studio 美化](note/dev/Cherry_Studio_美化.md) 2026-08-09
   - [iKuuu 机场签到脚本](note/dev/iKuuu_机场签到脚本.md) 2026-08-09
   - [VSCode文件空包折叠展开](note/dev/VSCode文件空包折叠展开.md) 2026-08-09
-  - [Windows 上禁用 CapsLock 键](note/dev/Windows_上禁用_CapsLock_键.md) 2026-08-09
   - [Windows 字体安装](note/dev/Windows_字体安装.md) 2026-08-09
   - [yt-dlp 下载B站视频](note/dev/yt-dlp_下载B站视频.md) 2026-08-09
   - [修复 Windows 数字显示成符号的异常](note/dev/修复_Windows_数字显示成符号的异常.md) 2026-08-09
