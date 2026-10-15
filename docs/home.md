@@ -16,10 +16,10 @@
   - [霍格沃茨魔法学校](note/大窝随笔/霍格沃茨魔法学校.md) 2026-08-25
 
 - dev
+  - [Trae 项目规则](note/dev/Trae_项目规则.md) 2026-10-15
   - [DeepSeek 自动启用识图模式](note/dev/DeepSeek_自动启用识图模式.md) 2026-10-13
   - [Windows 上禁用 CapsLock 键](note/dev/Windows_上禁用_CapsLock_键.md) 2026-10-13
   - [浏览器翻译拓展](note/dev/浏览器翻译拓展.md) 2026-09-13
-  - [Trae 项目规则](note/dev/Trae_项目规则.md) 2026-09-09
   - [免费 API 多渠道聚合](note/dev/免费_API_多渠道聚合.md) 2026-09-05
   - [Cherry Studio 美化](note/dev/Cherry_Studio_美化.md) 2026-08-09
   - [iKuuu 机场签到脚本](note/dev/iKuuu_机场签到脚本.md) 2026-08-09
