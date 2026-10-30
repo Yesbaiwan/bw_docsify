@@ -10,6 +10,7 @@
   - [百万的 API KEY](note/大窝随笔/百万的_API_KEY.md)
 
 - dev
+  - [GitHub 代理加速](note/dev/GitHub_代理加速.md)
   - [Trae 项目规则](note/dev/Trae_项目规则.md)
   - [免费 API 多渠道聚合](note/dev/免费_API_多渠道聚合.md)
   - [DeepSeek 自动启用识图模式](note/dev/DeepSeek_自动启用识图模式.md)
@@ -25,7 +26,6 @@
   - [批量删除 kimi 网页对话](note/dev/批量删除_kimi_网页对话.md)
   - [让远程服务器走本地电脑的代理实现科学上网](note/dev/让远程服务器走本地电脑的代理实现科学上网.md)
   - [豆包网页开启黑暗主题](note/dev/豆包网页开启黑暗主题.md)
-  - [GitHub 代理加速](note/dev/GitHub_代理加速.md)
   - [Docker 基础(Linux)](note/dev/Docker_基础(Linux).md)
   - [git 下载与配置](note/dev/git_下载与配置.md)
   - [TG 获取 Channel ID 与 TG BOT TOKEN](note/dev/TG_获取_Channel_ID_与_TG_BOT_TOKEN.md)
